@@ -17,4 +17,16 @@ function getText() {
 }
 
 // Get JSON file.
-function getJSON() {}
+function getJSON() {
+  fetch('posts.json')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      data.forEach(function(post) {
+        document.querySelector('#output').innerHTML += `<h1>${
+          post.title
+        }</h1><ul><li>${post.body}</li></ul>`;
+      });
+    });
+}
