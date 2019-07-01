@@ -28,7 +28,7 @@ function getJSON() {
       let output = ``;
 
       data.forEach(post => {
-        output += `<h1>${post.title}</h1>`;
+        output += `<h1>${post.title}</h1> <ul><li>${post.body}</li></ul>`;
       });
 
       document.getElementById('output').innerHTML = output;
