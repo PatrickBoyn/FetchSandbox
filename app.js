@@ -39,4 +39,22 @@ function getJSON() {
 }
 
 // Get external api data
-function fetchAPIData() {}
+function fetchAPIData() {
+  fetch('http://api.github.com/users')
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+
+      let output = '';
+
+      data.forEach(user => {
+        output += `<h1>${user.login}</h1>`;
+      });
+      document.getElementById('output').innerHTML = output;
+    })
+    .catch(error => {
+      console.log(error);
+    });
+}
