@@ -6,6 +6,7 @@ function getText() {
       .text()
       .then(function(data) {
         console.log(data);
+        document.getElementById('output').innerHTML = `<p>${data}</p>;`;
       })
       .catch(function(error) {
         console.error(error);
