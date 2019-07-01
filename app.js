@@ -1,4 +1,5 @@
 document.querySelector('#btn-1').addEventListener('click', getText);
+document.querySelector('#btn-2').addEventListener('click', getJSON);
 
 function getText() {
   fetch('test.txt').then(function(response) {
