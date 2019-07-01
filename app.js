@@ -1,6 +1,6 @@
 document.querySelector('#btn-1').addEventListener('click', getText);
 document.querySelector('#btn-2').addEventListener('click', getJSON);
-
+document.querySelector('#btn-3').addEventListener('click', fetchAPIData);
 // Get text file.
 function getText() {
   fetch('test.txt').then(function(response) {
@@ -37,3 +37,6 @@ function getJSON() {
       console.log(error);
     });
 }
+
+// Get external api data
+function fetchAPIData() {}
