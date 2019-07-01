@@ -23,10 +23,17 @@ function getJSON() {
       return response.json();
     })
     .then(function(data) {
-      data.forEach(function(post) {
-        document.querySelector('#output').innerHTML += `<h1>${
-          post.title
-        }</h1><ul><li>${post.body}</li></ul>`;
+      console.log(data);
+
+      let output = ``;
+
+      data.forEach(post => {
+        output += `<h1>${post.title}</h1>`;
       });
+
+      document.getElementById('output').innerHTML = output;
+    })
+    .catch(error => {
+      console.log(error);
     });
 }
