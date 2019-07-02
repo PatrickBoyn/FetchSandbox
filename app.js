@@ -40,7 +40,8 @@ function getJSON() {
 
 // Get external api data
 function fetchAPIData() {
-  fetch('http://api.github.com/users')
+  // This is to an API I wrote using .Net Core 2.2 (Unpublished, but not a secret)
+  fetch('http://localhost:5000/api/employee')
     .then(response => {
       return response.json();
     })
@@ -49,8 +50,8 @@ function fetchAPIData() {
 
       let output = '';
 
-      data.forEach(user => {
-        output += `<h1>${user.login}</h1>`;
+      data.forEach(employee => {
+        output += `<h1>${employee.firstName} ${employee.lastName}</h1>`;
       });
       document.getElementById('output').innerHTML = output;
     })
